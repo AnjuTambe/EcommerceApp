@@ -22,16 +22,15 @@ const UserLogin = () => {
         if (actualData.email && actualData.password) {
             try {
                 const response = await axios.post('http://localhost:5000/api/login', actualData);
-                console.log(response);
-                console.log(actualData);
                 document.getElementById('login-form').reset()
                 setError({ status: true, msg: "Login Success", type: 'success' })
                 navigate('/dashboard')
             } catch (error) {
                 console.log("error", error);
+                setError({ status: true, msg: "Invalid credentials", type: 'error' })
             }
         } else {
-            setError({ status: true, msg: "All fields are required", type: 'error' })
+            setError({ status: true, msg: "All fields are required", type: 'error' }) 
         }
     }
     return (

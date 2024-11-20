@@ -27,7 +27,6 @@ app.post('/api/register', async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = { name, email, password: hashedPassword, tc };
     await usersCollection.insertOne(newUser);
-
     res.status(201).json({ message: 'Successfully registered!' });
   } catch (error) {
     res.status(500).json({ message: 'Registration failed' });
