@@ -16,6 +16,9 @@ const Navbar = () => {
                             sx={{ color: "white", taxtTransform: 'none' }}>Contact</Button>
                         <Button component={NavLink} to="/LoginReg" style={({ isActive }) => { return { backgroundColor: isActive ? '#6D1b7b' : '' } }}
                             sx={{ color: "white", taxtTransform: 'none' }}>Login/Registration</Button>
+                             <Button component={NavLink} to="/Search" style={({ isActive }) => { return { backgroundColor: isActive ? '#6D1b7b' : '' } }}
+                            sx={{ color: "white", taxtTransform: 'none' }}>Search</Button>
+                            <Button component ={NavLink} to ="/cart" color='inherit'> Cart</Button>
                     </Toolbar>
                 </AppBar>
             </Box>
